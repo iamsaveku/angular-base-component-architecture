@@ -14,31 +14,33 @@ To test this architecture pattern, please clone this repo and run the angular ap
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
 
-1. Git clone `https://github.com/iamsaveku/angular-component-architecture.git`
+1. Git clone `https://github.com/iamsaveku/angular-base-component-architecture.git`
 2. Goto cloned location and open the command prompt.
 3. `npm install`
 4. `ng build`
 5. `ng serve`
 6. Navigate to `http://localhost:4200/`.
 
-# You will see the below application.
+# Application.
+
+After loading the demo application you will see all the below widgets changing its state every 3 seconds. Each widget will show only one state at a perticular time.
 
 ![Image of Dashboard](readme-assets/dashboard.png)
 
-As you can see that, we have three widgets on the screen with each in its own state and color.
+As you can see that, we have three widgets on the screen with each in its own state and color. Widget 1 showing no-data, widget 2 showing error and Widget 3 showing loading component.
 
-And the code to handle the same in angular is as below.
+And the code to handle the same in angular is as below. We have used the same base component `app-base` as a wrapper for our three widgets Widget1, Widget2 and Widget3, so that it can handle the respective widgets loading, error and no-data state. If the data comes from the server it will show the widget wrapped inside the base component else it will show other states based on the server response.
 
 ![Dashboard Angular Code](readme-assets/dashboard-code.png)
 
-As you can see below, we created error, loader and no-data as separeate component but using inside base component. Because of the `ng-content` directive we are able to show the content of widget 1, 2 and 3 inside the base component as shown above with yello border. The logic for showing different component states will be handled in base component.
+As you can see below, we created error, loader and no-data as separeate component but using inside base component. Because of the `ng-content` directive we are able to show the content of widget 1, 2 and 3 inside the base component as shown above with yellow border. The logic for showing different component states will be handled in base component.
 
 ![Base component](readme-assets/base.png)
 
 By this, we can reuse the base component in multiple widgets of our application with a generic loader, no-data and error component to make it consistent across the application.
 
 # Improvements
-Instead of directly writing the error, no-data and loader directive on the base component we can dynamically inject the respective component from .ts file in angular. Hope you will take it as a challenge and implememt it.
+Instead of directly writing the error, no-data and loader directive inside the base component html, in Angular we can dynamically inject the respective component from base component .ts file. Hope you will take it as a challenge and implememt it.
 
 # Licence
 MIT
