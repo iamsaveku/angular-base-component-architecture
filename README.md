@@ -44,5 +44,4 @@ Instead of directly writing the error, no-data and loader directive on the base 
 MIT
 
 
-> ## The day you stop learing, you stop earning ~ @iamsaveku
-> ## Happy Coding and Sharing :)
+> The day you stop learing, you stop earning ~ @iamsaveku
